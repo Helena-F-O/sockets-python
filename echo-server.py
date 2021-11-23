@@ -1,7 +1,7 @@
 import socket
 
 
-server = '127.0.0.1' #localhost - loopback
+server = '127.0.1.1' #localhost - loopback
 port = 12345
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
@@ -13,6 +13,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
         while True: #while(1) {....}
             data = conn.recv(1024) #leia 1024 bytes
             if not data: #se não leu nada ...
-                breack #sai do while
+                break #sai do while
             conn.sendall(data) # se leu alguma coisa -> devolve para o cliente
 
